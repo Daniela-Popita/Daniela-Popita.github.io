@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Animals</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="created.css" />
+  </head>
+  <body>
+    <header class="bg-primary text-white text-center py-5">
+      <h1 class="display-4">Discover Responsive Animals</h1>
+      <p class="lead">
+        Explore the adaptability of animals across various species
+      </p>
+    </header>
+
+    <main class="container my-5">
+      <!-- Animal Introduction Section -->
+      <div class="text-center mb-4">
+        <h2 class="fw-bold">Meet the Animals</h2>
+        <p class="text-muted">Learn about their unique responsive behaviors.</p>
+      </div>
+
+      <div class="row g-4" id="animalsContainer"></div>
+
+      <!-- Chameleon Section (after Meet the Animals) -->
+      <div class="container my-5">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <!-- Chameleon Card -->
+            <div class="card shadow-lg" style="height: 400px">
+              <div class="card-header text-center bg-success text-white">
+                <h2 class="fw-bold">
+                  The Chameleon: A Prime Example of Responsive Animals
+                </h2>
+              </div>
+              <div class="card-body">
+                <p class="lead mb-4">
+                  The chameleon is one of the most well-known responsive
+                  animals. Famous for its ability to change color, it can adapt
+                  to different environments, communicate through color changes,
+                  and even respond to emotions. Let's see it in action!
+                </p>
+                <div class="row justify-content-center">
+                  <div class="col-md-6">
+                    <div class="chameleon-container">
+                      <div id="chameleon" class="chameleon">
+                        <div class="head"></div>
+                        <div class="eye"></div>
+                        <div class="tail"></div>
+                        <div class="leg front-leg"></div>
+                        <div class="leg back-leg"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer text-center">
+                <div class="d-flex justify-content-center">
+                  <input
+                    type="color"
+                    id="colorPicker"
+                    class="form-control form-control-lg"
+                  />
+                  <label for="colorPicker" class="form-label ms-2 mt-3"
+                    >Pick a Color</label
+                  >
+                </div>
+                <small class="text-muted d-block mt-2"
+                  >Experiment with colors to see the chameleon adapt!</small
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3">
+      <p>&copy; 2025 Responsive Animals. Designed with ❤️ using Bootstrap.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="created.js"></script>
+  </body>
+</html>

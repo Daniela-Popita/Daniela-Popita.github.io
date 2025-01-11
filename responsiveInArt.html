@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Art Exploration</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: linear-gradient(to bottom, #e3f2fd, #f4f4f4);
+        color: #274066;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .hero-section {
+        text-align: center;
+        padding: 60px;
+        background: linear-gradient(120deg, #8ec5fc, #e0c3fc);
+        color: white;
+      }
+      /* Floating Button */
+      .floating-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        background-color: #274066;
+        color: white;
+        border-radius: 50%;
+        width: 90px;
+        height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        flex-direction: column;
+      }
+      .floating-btn:hover {
+        background-color: #274066;
+        transform: scale(1.1);
+      }
+      .floating-btn svg {
+        width: 30px;
+        height: 30px;
+      }
+      .floating-btn span {
+        font-size: 15px;
+        margin-top: 4px;
+      }
+      #clear-canvas {
+        background-color: #274066;
+      }
+      .section {
+        padding: 40px 20px;
+      }
+
+      .art-card {
+        transition: transform 0.3s ease;
+        width: 100%;
+        max-width: 400px; /* Set maximum width for each card */
+        height: 550px; /* Set consistent height */
+        margin: 0 auto 20px auto; /* Center cards and add spacing */
+      }
+
+      .art-card img {
+        width: 100%;
+        height: 70%; /* Take up 70% of the card height */
+        object-fit: cover; /* Ensures the image covers the space without distortion */
+      }
+
+      .art-card:hover {
+        transform: scale(1.05);
+      }
+
+      .container section p {
+        text-align: center;
+        justify-content: center;
+      }
+
+      .interactive-section {
+        padding: 40px 20px;
+      }
+
+      #interactive-canvas {
+        border: 1px solid #ddd;
+        display: block;
+        margin: 20px auto;
+        width: 100%;
+        max-width: 600px;
+        height: 400px;
+      }
+
+      #dynamic-art {
+        width: 100%;
+        max-width: 600px;
+        display: block;
+        margin: 20px auto;
+        transition: transform 0.5s ease;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background: #274066;
+        color: white;
+      }
+
+      @media (max-width: 768px) {
+        .hero-section {
+          padding: 40px 20px;
+        }
+        .floating-btn {
+          width: 70px;
+          height: 70px;
+        }
+        .floating-btn span {
+          font-size: 12px;
+        }
+        #interactive-canvas {
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="hero-section">
+      <h1>Responsive Art Exploration</h1>
+      <p>
+        Discover how art evolves with interaction, accessibility, and your own
+        creativity!
+      </p>
+    </header>
+    <a href="index.html" class="floating-btn">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="white"
+        width="24px"
+        height="24px"
+      >
+        <path
+          d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm5 13h-4v4h-2v-4H7v-2h4V9h2v4h4v2z"
+        />
+      </svg>
+      <span>Home</span>
+    </a>
+    <div class="container section">
+      <h2 class="text-center">How People Respond to Art</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card art-card">
+            <img
+              src="images/art2.jpg"
+              class="card-img-top"
+              alt="Cultural Art"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Cultural Reflection</h5>
+              <p class="card-text">
+                Art reflects cultural and social themes, connecting us with our
+                heritage and current events.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card art-card">
+            <img
+              src="images/art4.jpg"
+              class="card-img-top"
+              alt="Emotional Art"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Emotional Connection</h5>
+              <p>
+                “If I could say it in words there would be no reason to paint.”
+                Edward Hopper
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card art-card">
+            <img src="images/art3.jpg" class="card-img-top" alt="Sensory Art" />
+            <div class="card-body">
+              <h5 class="card-title">Sensory Engagement</h5>
+              <p class="card-text">
+                Immersive and sensory-rich art engages our physical senses,
+                creating memorable experiences.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container section">
+      <div class="row">
+        <div
+          class="col-md-6 d-flex flex-column justify-content-center align-items-center"
+        >
+          <h2 class="text-center mb-2">Accessible Art for Everyone</h2>
+          <p class="text-center mb-0">
+            Accessible art was created as a response to the needs of visually
+            impaired people. Art becomes truly inclusive when it transcends
+            language and cultural barriers. Accessible art includes, but is not
+            limited to, providing appropriate signage, special audio-visual
+            equipment, or the use of an Art Interpreter. Accessible art strives
+            to allow everyone to experience and appreciate art regardless of
+            their visual capabilities. Tactile and audio tours of a museum may
+            be used, as well as audio descriptions of works of art and 3D
+            printing of sculptures.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <img
+            src="images/art.webp"
+            alt="Accessible Art"
+            class="img-fluid rounded"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="interactive-section">
+      <div class="container">
+        <h2 class="text-center">Create you own art piece</h2>
+        <p class="text-center">
+          Play with the canvas below! Draw your own shapes or patterns. Art is
+          in your hands.
+        </p>
+        <canvas id="interactive-canvas"></canvas>
+        <div class="text-center">
+          <button id="clear-canvas" class="btn btn-primary mt-3">
+            Clear Canvas
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container section">
+      <h2 class="text-center">Dynamic Art</h2>
+      <p class="text-center">
+        Hover over the image below to see how art changes based on your actions!
+      </p>
+      <img
+        id="dynamic-art"
+        src="https://via.placeholder.com/600"
+        alt="Dynamic Art"
+      />
+    </div>
+
+    <footer>
+      <p>© 2025 Responsive Contexts. All rights reserved.</p>
+    </footer>
+
+    <script>
+      const canvas = document.getElementById("interactive-canvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+      let drawing = false;
+
+      canvas.addEventListener("mousedown", () => {
+        drawing = true;
+      });
+      canvas.addEventListener("mouseup", () => {
+        drawing = false;
+        ctx.beginPath();
+      });
+      canvas.addEventListener("mousemove", draw);
+
+      function draw(event) {
+        if (!drawing) return;
+
+        const rect = canvas.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        ctx.lineWidth = 2;
+        ctx.lineCap = "round";
+        ctx.strokeStyle = "black";
+
+        ctx.lineTo(x, y);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+      }
+
+      document.getElementById("clear-canvas").addEventListener("click", () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      });
+
+      const dynamicArt = document.getElementById("dynamic-art");
+
+      // Define an array of effects
+      const effects = [
+        {
+          transform: "scale(1.1) rotate(10deg)",
+          filter: "brightness(1.2) saturate(1.5) blur(2px)",
+        },
+        {
+          transform: "scale(1.2) skewX(15deg)",
+          filter: "contrast(1.5) sepia(0.7)",
+        },
+        {
+          transform: "scale(0.9) rotate(-5deg)",
+          filter: "grayscale(0.8) hue-rotate(120deg)",
+        },
+        {
+          transform: "scale(1.15) translateX(20px)",
+          filter: "invert(0.5) brightness(0.8)",
+        },
+        {
+          transform: "scale(1.3) rotate(5deg)",
+          filter: "drop-shadow(5px 5px 10px rgba(0,0,0,0.5))",
+        },
+      ];
+
+      // Apply a random effect on hover
+      dynamicArt.addEventListener("mouseover", () => {
+        const randomEffect =
+          effects[Math.floor(Math.random() * effects.length)];
+        dynamicArt.src = "images/art5.jpg"; // Change to another image URL
+        dynamicArt.style.transform = randomEffect.transform;
+        dynamicArt.style.filter = randomEffect.filter;
+        dynamicArt.style.transition = "all 0.5s ease";
+      });
+
+      // Revert to original state on mouse out
+      dynamicArt.addEventListener("mouseout", () => {
+        dynamicArt.src = "images/art5.jpg"; // Revert to original image URL
+        dynamicArt.style.transform = "scale(1) rotate(0)";
+        dynamicArt.style.filter = "none";
+        dynamicArt.style.transition = "all 0.5s ease";
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
