@@ -1,0 +1,98 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(to bottom, #e3f2fd, #f4f4f4);
+}
+
+.card-body {
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.card-body.expanded {
+  height: auto; /* Expand when clicked */
+}
+
+.card-text {
+  display: none; /* Hide text initially */
+}
+
+.card-body.expanded .card-text {
+  display: block; /* Show text when expanded */
+}
+
+.hero {
+  background-color: #274066;
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+}
+/* Floating Button */
+.floating-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #274066;
+  color: white;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  flex-direction: column;
+}
+.floating-btn:hover {
+  background-color: #274066;
+  transform: scale(1.1);
+}
+.floating-btn svg {
+  width: 30px;
+  height: 30px;
+}
+.floating-btn span {
+  font-size: 15px;
+  margin-top: 4px;
+}
+
+.card {
+  margin-bottom: 30px;
+}
+
+.row {
+  margin-bottom: 80px;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  cursor: pointer;
+  height: 250px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  /* Adjusting the header padding for small screens */
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .floating-btn {
+    width: 70px;
+    height: 70px;
+  }
+  .floating-btn span {
+    font-size: 12px;
+  }
+}
+footer {
+  background-color: #274066;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
