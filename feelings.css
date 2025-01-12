@@ -57,7 +57,7 @@ footer {
   color: white;
 }
 .card-front.empathy {
-  background-color: #82b1ff;
+  background-color: #003b99;
 }
 .card-back.empathy {
   background-color: #2962ff;
@@ -65,17 +65,19 @@ footer {
 }
 .card-front.influence {
   background-color: #ffcc80;
+  color: black;
 }
 .card-back.influence {
   background-color: #ff8f00;
-  color: white;
+  color: black;
 }
 .card-front.context {
   background-color: #a5d6a7;
+  color: black;
 }
 .card-back.context {
   background-color: #388e3c;
-  color: white;
+  color: black;
 }
 .card-front.positive {
   background-color: #ffeb3b;
@@ -90,11 +92,11 @@ footer {
   color: black;
 }
 .card-back.neutral {
-  background-color: #9e9e9e;
+  background-color: #424242;
   color: white;
 }
 .card-front.negative {
-  background-color: #ef9a9a;
+  background-color: #841515;
 }
 .card-back.negative {
   background-color: #d32f2f;
